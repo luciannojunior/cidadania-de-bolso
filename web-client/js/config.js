@@ -1,23 +1,34 @@
 const app = angular.module('cidadaniaApp', ['ngMaterial', 'ui.router']);
 
-app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
-    // $locationProvider.html5Mode({
-    //     enabled: true,
-    //     requireBase: false
-    // });
+app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
+    function ($stateProvider, $locationProvider, $urlRouterProvider) {
+        // $locationProvider.html5Mode({
+        //     enabled: true,
+        //     requireBase: false
+        // });
 
-    $urlRouterProvider.otherwise('/home');
+        // $urlRouterProvider.otherwise('/home');
 
-    $stateProvider
-        .state('lei.visualizar', {
-            url: '/lei/{leiNome}',
-            templateUrl: 'view/detalhes.html',
-            controller: 'leiController as leiCtrl',
-            resolve: {
-                lei: function ($stateParams) {
-                    const nome = $stateParams.leiNome;
-                    return nome;
+        $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: 'view/tags.html'
+            })
+            .state('lei', {
+                url: '/lei/:nomeLei',
+                templateUrl: 'view/detalhes.html',
+                controller: 'leiController as leiCtrl',
+                resolve: {
+                    nomeLei: function ($stateParams) {
+                        return $stateParams.nomeLei;
+                    }
                 }
-            }
+            });
+    }]);
+
+app.run(['$rootScope', function ($rootScope) {
+    $rootScope.$on('$stateChangeError',
+        function (event, toState, toParams, fromState, fromParams, error) {
+            console.log(event, error);
         });
 }]);

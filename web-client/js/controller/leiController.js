@@ -1,9 +1,9 @@
 (() => {
     'use-strict';
-    app.controller('leiController', ['lei', function (lei) {
+    app.controller('leiController', ['nomeLei', function (nomeLei) {
         const self = this;
 
-        this.lei = { nome: leiNome };
+        this.lei = { nome: nomeLei, tags: [] };
 
         this.upVote = () => {};
 

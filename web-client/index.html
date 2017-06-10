@@ -1,25 +1,30 @@
-<!DOCTYPE html>
+<html !DOCTYPE>
 
 <head>
     <title>Cidadania de Bolso</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body ng-app="cidadaniaApp" ng-cloak>
-
-    <md-input-container>
-        <label>Username</label>
-        <input type="text" ng-model="user.name">
-    </md-input-container>
-    <md-button aria-label="search-button" id="search-button" class="md-icon-button" type="submit">
-        <i class="fa fa-search"></i>
-    </md-button>
+<body ng-app="cidadaniaApp" layout="column">
+    <!-- Logo e seção inicial -->
+    <div layout="row" layout-align="center center" style="background-color: #600038">
+        <img src="img/xamarin-logo.png" flex-gt-sm="40" flex="90" alt="Cidadania de Bolso">
+    </div>
+    <!-- Barra de busca-->
+    <div layout="row" layout-padding layout-align="center center" style="background-color: #3d0023">
+        <input flex-gt-sm="40" flex="90" type="text" class="minha-busca" placeholder="Pesquise seus direitos">
+    </div>
+    <!-- Parte dinâmica do app-->
+    <div layout="column">
+        <div ui-view></div>
+    </div>
 
     <!--Dependencias-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -39,7 +44,4 @@
 
     <!--Controller-->
     <script src="js/controller/leiController.js"></script>
-    
-
-    </script>
 </body>
