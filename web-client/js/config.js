@@ -43,6 +43,13 @@ app.run(['$rootScope', function ($rootScope) {
         function (event, toState, toParams, fromState, fromParams, error) {
             console.log(event, error);
         });
+    
+    $rootScope.colors = {
+        cardLei: { background: 'grey-200' },
+        curtir: { background: 'light-green-A700' },
+        descurtir: { background: 'red-A700' },
+        botao: { background: 'grey-300' } 
+    };
 }]);
 
 /// MOCK
