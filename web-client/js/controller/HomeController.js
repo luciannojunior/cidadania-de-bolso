@@ -2,6 +2,7 @@
     'use-strict';
     
     app.controller("HomeController", ['$scope', function ($scope) {
+
         const sample_data = [
             { "value": 100, "tag": "Internet", "url": "https://github.com/luciannojunior/cidadania-de-bolso" },
             { "value": 70, "tag": "Mercadinho", "url": "https://github.com/luciannojunior/cidadania-de-bolso" },
