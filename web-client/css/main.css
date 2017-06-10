@@ -10,7 +10,23 @@ md-card>:not(md-card-content) img, md-card>img {
   padding: 5px;
   font-family: Roboto;
   width: 100%;
-} 
+}
+
+#botao-busca {
+  color: white;
+}
+
+#upvotes {
+  color: limegreen;
+}
+
+#downvotes {
+  color: red;
+}
+
+card-visualizacao {
+  margin-top: 10px;
+}
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved. 

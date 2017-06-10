@@ -1,14 +1,21 @@
 (() => {
     'use-strict';
-    app.controller('leisController', ['tag', function (tag) {
+    app.controller('leisController', ['tagId', '$state', function (tagId, $state) {
+        
+        const STATE_LEI = "lei";
+        
         const self = this;
 
-        this.tag = tag;
+        this.tagId = tagId;
 
-        this.leis = [{}];
+        this.leis = criarLeis();
 
         this.getLeis = () => {
             return self.leis;
+        };
+
+        this.abrirDetalhes = lei => {
+            $state.go(STATE_LEI, { leiId: lei.$id });
         };
 
         (() => {

@@ -1,32 +1,82 @@
-<md-content flex>
-    <!--Barra superior-->
-    <div layout="row">
-        <span class="md-display-1">{{ leiCtrl.lei.nome }}</span>
-        <span flex></span>
-        <md-chips ng-model="leiCtrl.lei.tags" placeholder="Adicione uma tag" md-max-chips="5">
-        </md-chips>
-    </div>
+<!-- Visualização de lei -->
+<md-content flex-gt-sm="40" 
+        flex="80" 
+        data-md-colors="::colors.cardLei"
+        class="card-visualizacao"
+        layout-padding>
+    <br>
+    <div data-ng-if="!leiCtrl.isModoEdicao()" layout-padding>
+        <!--Barra superior-->
+        <div layout="row">
+            <span class="md-display-1">{{ leiCtrl.lei.nome }}</span>
+            <span flex></span>
+            <md-chips data-ng-model="leiCtrl.lei.tags" data-readonly="true" placeholder="Adicione uma tag" md-max-chips="5">
+            </md-chips>
+        </div>
 
-    <!--Conteudo-->
-    <div flex>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet leo sed lectus varius dictum eget nec elit. Quisque
-        faucibus viverra dui non molestie. Donec pretium mi lacus, quis varius est tincidunt at. Mauris tincidunt nulla non
-        velit varius posuere. Integer eu auctor turpis. Etiam quis porttitor ex, non volutpat metus. In hac habitasse platea
-        dictumst. Donec malesuada blandit pretium. Cras volutpat ut erat sed ultricies. Sed blandit justo vel arcu lacinia,
-        quis ultricies leo tincidunt.
-    </div>
+        <!--Conteudo-->
+        <div flex>
+            {{ leiCtrl.lei.descricao }}
+        </div>
 
-    <!---->
-    <div layout="row" layout-align="end center">
-        <md-button class="md-raised" data-ng-click="leiCtrl.upVote()">
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-        </md-button>
-        <md-button class="md-raised" data-ng-click="leiCtrl.downVote()">
-            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-        </md-button>
-        <md-button class="md-raised" data-ng-click="leiCtrl.ativarEdicao()">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        </md-button>
-    </div>
+        <br>
+        <div layout="row" layout-align="end center">
 
+            <span class="md-subhead" id="upvotes">{{ leiCtrl.lei.upVotes }}</span>
+            <md-button class="md-raised md-fab md-mini" 
+                    data-ng-click="leiCtrl.upVote()"
+                    data-md-colors="::colors.curtir">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+
+                <md-tooltip>Like</md-tooltip>
+            </md-button>
+
+            <span class="md-subhead" id="downvotes">{{ leiCtrl.lei.downVotes }}</span>
+            <md-button class="md-raised md-fab md-mini" 
+                    data-ng-click="leiCtrl.downVote()"
+                    data-md-colors="::colors.descurtir">
+                <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+
+                <md-tooltip>Dislikes</md-tooltip>
+            </md-button>
+
+            <md-button class="md-raised md-fab md-mini" 
+                    data-ng-click="leiCtrl.ativarEdicao()"
+                    data-md-colors="::colors.botao">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                <md-tooltip>Ativar Edição</md-tooltip>
+            </md-button>
+        </div>
+    </div>
+    <div data-ng-if="leiCtrl.isModoEdicao()" layout-padding>
+        <!--Barra superior-->
+        <div layout="row">
+            <md-input-container flex>
+                <label>Nome da Lei</label>
+                <input type="text" data-ng-model="leiCtrl.lei.nome" required>
+            </md-input-container>
+            <span flex></span>
+            <md-chips data-ng-model="leiCtrl.lei.tags" data-readonly="false" placeholder="Adicione uma tag" data-md-max-chips="5">
+            </md-chips>
+        </div>
+
+        <!--Conteudo-->
+        <md-input-container class="md-block">
+            <label>Descrição da Lei</label>
+            <textarea data-ng-model="leiCtrl.lei.descricao" data-md-maxlength="150" rows="5" data-md-select-on-focus>
+            </textarea>
+        </md-input-container>
+
+        <br>
+        <div layout="row" layout-align="center center">
+            <md-button flex class="md-raised" 
+                    data-ng-click="leiCtrl.salvarEdicoes()"
+                    data-md-colors="::colors.botao">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+
+                <md-tooltip>Salvar Edições</md-tooltip>
+            </md-button>
+        </div>
+    </div>
 </md-content>

@@ -1,14 +1,28 @@
 (() => {
     'use-strict';
-    app.controller('leiController', ['nomeLei', function (nomeLei) {
+    app.controller('leiController', ['leiId', function (leiId) {
         const self = this;
 
-        this.lei = { nome: nomeLei, tags: [] };
+        let isModoEdicao = false;
 
-        this.upVote = () => {};
+        this.lei = criarLei(leiId);
 
-        this.downVote = () => {};
+        this.isModoEdicao = () => isModoEdicao;
 
-        this.ativarEdicao = () => {};
+        this.upVote = () => {
+            self.lei.upVotes++;
+        };
+
+        this.downVote = () => {
+            self.lei.downVotes++;
+        };
+
+        this.ativarEdicao = () => {
+            isModoEdicao = true;
+        };
+
+        this.salvarEdicoes = () => {
+            isModoEdicao = false;
+        };
     }]);
 })();
