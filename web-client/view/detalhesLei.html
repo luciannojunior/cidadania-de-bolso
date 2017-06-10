@@ -1,34 +1,71 @@
-<md-content flex>
+<!-- Visualização de lei -->
+<md-content flex="30">
     <br>
-    <!--Barra superior-->
-    <div layout="row">
-        <span class="md-display-1">{{ leiCtrl.lei.nome }}</span>
-        <span flex></span>
-        <md-chips ng-model="leiCtrl.lei.tags" placeholder="Adicione uma tag" md-max-chips="5">
-        </md-chips>
+    <div data-ng-show="!leiCtrl.isModoEdicao()">
+        <!--Barra superior-->
+        <div layout="row">
+            <span class="md-display-1">{{ leiCtrl.lei.nome }}</span>
+            <span flex></span>
+            <md-chips ng-model="leiCtrl.lei.tags" placeholder="Adicione uma tag" md-max-chips="5">
+            </md-chips>
+        </div>
+
+        <!--Conteudo-->
+        <div flex>
+            {{ leiCtrl.lei.descricao }}
+        </div>
+
+        <br>
+        <div layout="row" layout-align="end center">
+
+            <span class="md-subhead">{{ leiCtrl.lei.upVotes }}</span>
+            <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.upVote()">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            </md-button>
+
+            <span class="md-subhead">{{ leiCtrl.lei.downVotes }}</span>
+            <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.downVote()">
+                <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+            </md-button>
+
+            <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.ativarEdicao()">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </md-button>
+        </div>
     </div>
+    <div data-ng-show="leiCtrl.isModoEdicao()">
+        <!--Barra superior-->
+        <div layout="row">
+            <md-input-container>
+                <label>Color</label>
+                <input type="text" data-ng-model="leiCtrl.lei.nome" required md-maxlength="10">
+            </md-input-container>
+            <span flex></span>
+            <md-chips ng-model="leiCtrl.lei.tags" placeholder="Adicione uma tag" md-max-chips="5">
+            </md-chips>
+        </div>
 
-    <!--Conteudo-->
-    <div flex>
-        {{ leiCtrl.lei.descricao }}
+        <!--Conteudo-->
+        <div flex>
+            {{ leiCtrl.lei.descricao }}
+        </div>
+
+        <br>
+        <div layout="row" layout-align="end center">
+
+            <span class="md-subhead">{{ leiCtrl.lei.upVotes }}</span>
+            <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.upVote()">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            </md-button>
+
+            <span class="md-subhead">{{ leiCtrl.lei.downVotes }}</span>
+            <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.downVote()">
+                <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+            </md-button>
+
+            <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.ativarEdicao()">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </md-button>
+        </div>
     </div>
-
-    <br>
-    <div layout="row" layout-align="end center">
-
-        <span class="md-subhead">{{ leiCtrl.lei.upVotes }}</span>
-        <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.upVote()">
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-        </md-button>
-
-        <span class="md-subhead">{{ leiCtrl.lei.downVotes }}</span>
-        <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.downVote()">
-            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-        </md-button>
-
-        <md-button class="md-raised md-fab md-mini" data-ng-click="leiCtrl.ativarEdicao()">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        </md-button>
-    </div>
-
 </md-content>

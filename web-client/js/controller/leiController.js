@@ -1,18 +1,24 @@
 (() => {
     'use-strict';
-    app.controller('leiController', ['nomeLei', function (nomeLei) {
+    app.controller('leiController', ['leiId', function (leiId) {
         const self = this;
 
-        this.lei = criarLei(nomeLei);
+        let isModoEdicao = false;
 
-        this.upVote = () => { 
+        this.lei = criarLei(leiId);
+
+        this.isModoEdicao = () => isModoEdicao;
+
+        this.upVote = () => {
             self.lei.upVotes++;
         };
 
-        this.downVote = () => { 
+        this.downVote = () => {
             self.lei.downVotes++;
         };
 
-        this.ativarEdicao = () => { };
+        this.ativarEdicao = () => {
+            isModoEdicao = true;
+        };
     }]);
 })();

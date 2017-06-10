@@ -14,7 +14,15 @@ md-card>:not(md-card-content) img, md-card>img {
 
 #botao-busca {
   color: white;
-} 
+}
+
+#upvotes {
+  color: limegreen;
+}
+
+#downvotes {
+  color: red;
+}
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved. 
