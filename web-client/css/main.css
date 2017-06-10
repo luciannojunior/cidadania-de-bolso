@@ -5,6 +5,12 @@ md-card>:not(md-card-content) img, md-card>img {
   box-sizing : border-box;
 }
 
+.minha-busca {
+  border-radius: 8px;
+  padding: 5px;
+  font-family: Roboto;
+  width: 100%;
+} 
 
 /*
 Copyright 2016 Google Inc. All Rights Reserved. 

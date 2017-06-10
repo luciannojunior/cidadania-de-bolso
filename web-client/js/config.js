@@ -14,18 +14,27 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
                 url: '/home',
 
                 templateUrl: 'view/tags.html',
-                controller: 'HomeController' 
+                controller: 'HomeController'
             })
             .state('lei', {
                 url: '/lei/:nomeLei',
-                templateUrl: 'view/detalhes.html',
+                templateUrl: 'view/detalhesLei.html',
                 controller: 'leiController as leiCtrl',
                 resolve: {
-                    nomeLei: function ($stateParams) {
+                    nomeLei: ($stateParams) => {
                         return $stateParams.nomeLei;
                     }
                 }
-
+            })
+            .state('leisBuscadas', {
+                url: '/leisBuscadas/:tag',
+                templateUrl: 'view/leisBuscadas.html',
+                controller: 'leisController as leisCtrl',
+                resolve: {
+                    tag: ($stateParams) => {
+                        return $stateParams.tag;
+                    }
+                }
             });
     }]);
 

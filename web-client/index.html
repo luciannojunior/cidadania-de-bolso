@@ -20,12 +20,13 @@
     <!-- Barra de busca-->
     <div layout="row" layout-padding layout-align="center center" style="background-color: #3d0023">
         <input flex-gt-sm="40" flex="90" type="text" class="minha-busca" placeholder="Pesquise seus direitos">
+        <md-button>
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </md-button>
     </div>
     <!-- Parte dinâmica do app-->
-    <div layout="column">
-        <div ui-view></div>
-     
-        
+    <div layout="row" layout-align="center center">
+        <div flex-gt-sm="60" flex="90" ui-view></div>
     </div>
 
     <!--Dependencias-->
@@ -47,6 +48,7 @@
     <!--Controllers-->
     <script src='js/controller/HomeController.js'></script> 
     <script src="js/controller/leiController.js"></script>
+    <script src="js/controller/leisController.js"></script>
 
     <!--D3plus.js -->
     <script src="http://www.d3plus.org/js/d3.js"></script>
