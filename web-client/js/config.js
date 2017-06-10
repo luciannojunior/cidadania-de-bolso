@@ -44,3 +44,13 @@ app.run(['$rootScope', function ($rootScope) {
             console.log(event, error);
         });
 }]);
+
+function criarLei(nomeLei) {
+    return {
+        nome: nomeLei || "Nome genérico",
+        descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet leo sed lectus varius dictum eget nec elit. Quisque        faucibus viverra dui non molestie. Donec pretium mi lacus, quis varius est tincidunt at. Mauris tincidunt nulla non velit varius posuere.Integer eu auctor turpis. Etiam quis porttitor ex, non volutpat metus. In hac habitasse platea dictumst. Donec malesuada blandit pretium. Cras volutpat ut erat sed ultricies.Sed blandit justo vel arcu lacinia, quis ultricies leo tincidunt.',
+        upVotes: 0,
+        downVotes: 0,
+        tags: []
+    };
+}

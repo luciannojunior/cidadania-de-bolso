@@ -20,13 +20,13 @@
     <!-- Barra de busca-->
     <div layout="row" layout-padding layout-align="center center" style="background-color: #3d0023">
         <input flex-gt-sm="40" flex="90" type="text" class="minha-busca" placeholder="Pesquise seus direitos">
-        <md-button>
+        <md-button id="botao-busca" class="md-raised" style="background-color: #47001d">
             <i class="fa fa-search" aria-hidden="true"></i>
         </md-button>
     </div>
     <!-- Parte dinâmica do app-->
-    <div layout="row" layout-align="center center">
-        <div flex-gt-sm="60" flex="90" ui-view></div>
+    <div layout="row" layout-align="center start">
+        <div ui-view></div>
     </div>
 
     <!--Dependencias-->

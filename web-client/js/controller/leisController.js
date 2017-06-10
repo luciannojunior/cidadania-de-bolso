@@ -5,7 +5,7 @@
 
         this.tag = tag;
 
-        this.leis = [{}];
+        this.leis = [criarLei(),criarLei(),criarLei(),criarLei(), criarLei(), criarLei(), criarLei()];
 
         this.getLeis = () => {
             return self.leis;

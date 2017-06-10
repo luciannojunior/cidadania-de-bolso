@@ -3,12 +3,16 @@
     app.controller('leiController', ['nomeLei', function (nomeLei) {
         const self = this;
 
-        this.lei = { nome: nomeLei, tags: [] };
+        this.lei = criarLei(nomeLei);
 
-        this.upVote = () => {};
+        this.upVote = () => { 
+            self.lei.upVotes++;
+        };
 
-        this.downVote = () => {};
+        this.downVote = () => { 
+            self.lei.downVotes++;
+        };
 
-        this.ativarEdicao = () => {};
+        this.ativarEdicao = () => { };
     }]);
 })();
