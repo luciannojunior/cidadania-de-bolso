@@ -1,0 +1,32 @@
+<md-content>
+    <!--Barra superior-->
+    <div layout="row">
+        <span class="md-display-1">{{ leiCtrl.lei.nome }}</span>
+        <span flex></span>
+        <md-chips ng-model="leiCtrl.lei.tags" placeholder="Adicione uma tag" md-max-chips="5">
+        </md-chips>
+    </div>
+
+    <!--Conteudo-->
+    <div flex>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet leo sed lectus varius dictum eget nec elit. Quisque
+        faucibus viverra dui non molestie. Donec pretium mi lacus, quis varius est tincidunt at. Mauris tincidunt nulla non
+        velit varius posuere. Integer eu auctor turpis. Etiam quis porttitor ex, non volutpat metus. In hac habitasse platea
+        dictumst. Donec malesuada blandit pretium. Cras volutpat ut erat sed ultricies. Sed blandit justo vel arcu lacinia,
+        quis ultricies leo tincidunt.
+    </div>
+
+    <!---->
+    <div layout="row" layout-align="end center">
+        <md-button class="md-raised" data-ng-click="leiCtrl.upVote()">
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        </md-button>
+        <md-button class="md-raised" data-ng-click="leiCtrl.downVote()">
+            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        </md-button>
+        <md-button class="md-raised" data-ng-click="leiCtrl.ativarEdicao()">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </md-button>
+    </div>
+
+</md-content>
