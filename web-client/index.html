@@ -6,10 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
 </head>
 
 <body ng-app="cidadaniaApp" ng-cloak>
 
+    <md-input-container>
+        <label>Username</label>
+        <input type="text" ng-model="user.name">
+    </md-input-container>
+    <md-button aria-label="search-button" id="search-button" class="md-icon-button" type="submit">
+        <i class="fa fa-search"></i>
+    </md-button>
 
     <!--Dependencias-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -22,5 +32,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
     <!--Config-->
-    <script src="src/main/js/config.js"></script>
+    <script src="js/config.js"></script>
+
+    <!--Service-->
+    <script src="js/service/BuscaService.js"></script>
+
+    <!--Controller-->
+    <script src="js/controller/leiController.js"></script>
+    
+
+    </script>
 </body>

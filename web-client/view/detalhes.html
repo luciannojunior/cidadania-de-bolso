@@ -1,0 +1,20 @@
+<md-content layout="column">
+    <!--Barra superior-->
+    <div layout="row">
+        <md-chips ng-model="leiCtrl.lei.tags" placeholder="Adicione uma tag" md-max-chips="5">
+        </md-chips>
+    </div>
+
+    <!--Conteudo-->
+    <div>
+        textao
+    </div>
+
+    <!---->
+    <div layout="row" layout-align="end center">
+        <md-button class="md-raised" data-ng-click="leiCtrl.upVote()">up</md-button>
+        <md-button class="md-raised" data-ng-click="leiCtrl.downVote()">down</md-button>
+        <md-button class="md-raised" data-ng-click="leiCtrl.ativarEdicao()">editar</md-button>
+    </div>
+
+</md-content>
