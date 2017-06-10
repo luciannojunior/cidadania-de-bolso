@@ -12,7 +12,8 @@
         $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: 'view/tags.html'
+                templateUrl: 'view/tags.html',
+                controller: 'HomeController'
             });
     }]);
 })();
