@@ -12,7 +12,9 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
         $stateProvider
             .state('home', {
                 url: '/home',
-                templateUrl: 'view/tags.html'
+
+                templateUrl: 'view/tags.html',
+                controller: 'HomeController' 
             })
             .state('lei', {
                 url: '/lei/:nomeLei',
@@ -23,6 +25,7 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
                         return $stateParams.nomeLei;
                     }
                 }
+
             });
     }]);
 
