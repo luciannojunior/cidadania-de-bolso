@@ -1,0 +1,58 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    </head>
+    <body ng-app="populador" layout="column" ng-controller="MainController as vm">
+
+        <md-toolbar>
+            Populador de dados do Cidadania de Bolso
+        </md-toolbar>
+        <div flex layout="row">
+            <div layout="column" flex>
+            <md-content layout-gt-sm="column" layout-padding>
+
+                <div layout-gt-sm="row" layout="column">
+                    <md-input-container flex-gt-sm="60" flex="100">
+                        <label>Título do Post</label>
+                        <input ng-model="vm.novoPost.titulo">
+                    </md-input-container>                    
+                    <md-input-container flex-gt-sm="40" flex="100">
+                        <label>Tags (separadas por ,)</label>
+                        <input ng-model="vm.novoPost.tags">
+                    </md-input-container>
+                </div>
+                <div layout-gt-sm="row" layout="column">
+                    <md-input-container flex-gt-sm="100" flex="100">
+                        <label>Conteúdo</label>
+                        <textarea ng-model="vm.novoPost.texto" rows="5" ></textarea>
+                    </md-input-container>                    
+                </div>
+                <div layout="row" layout-align="end center">
+                <md-button class="md-raised md-primary" data-ng-click="vm.enviarPost(vm.novoPost)">Enviar </md-button>
+                </div>
+                <md-list flex>
+                    <md-list-item class="md-2-line" ng-repeat="post in vm.posts | reverse">
+                        <img src="sample.jpeg" class="md-avatar" alt="Lula 2018" />
+                        <div class="md-list-item-text">
+                            <h3>{{ post.titulo }}</h3>
+                            <p><b>{{ post.tags }}</b> --- {{ post.texto.substring(0,40) + '...' }}</p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/MainController.js"></script>
+    </body>
+</html>
