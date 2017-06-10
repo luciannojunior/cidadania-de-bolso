@@ -9,11 +9,10 @@
 
         $urlRouterProvider.otherwise('/home');
 
-        // $stateProvider
-        //     .state('home', {
-        //         url: '/home',
-        //         template: '<home-page><\home-page>'
-        //     })
-        //});;
+        $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: 'view/tags.html'
+            });
     }]);
 })();

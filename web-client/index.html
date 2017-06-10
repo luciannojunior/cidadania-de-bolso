@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-
+<html !DOCTYPE>
 <head>
     <title>Cidadania de Bolso</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body ng-app="cidadaniaApp" ng-cloak>
-
-
+<body ng-app="cidadaniaApp" layout="column">
+    <!-- Logo e seção inicial -->
+    <div layout="row" layout-align="center center" style="background-color: #600038">
+        <img src="img/xamarin-logo.png" flex-gt-sm="40" flex="90" alt="Cidadania de Bolso">
+    </div>
+    <!-- Barra de busca-->
+    <div layout="row" layout-padding layout-align="center center" style="background-color: #3d0023">
+        <input flex-gt-sm="40" flex="90" type="text" class="minha-busca" placeholder="Pesquise seus direitos">
+    </div>
+    <!-- Parte dinâmica do app-->
+    <div layout="column">
+        <div ui-view></div>
+    </div>
     <!--Dependencias-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -22,5 +32,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
     <!--Config-->
-    <script src="src/main/js/config.js"></script>
+    <script src="js/config.js"></script>
 </body>
