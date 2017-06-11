@@ -1,7 +1,7 @@
 (() => {
     'use-strict';
     app.controller("HomeController", ['$state', 'VizService', function ($state, VizService) {
-        const STATE_LEIS_BUSCADAS = 'leisBuscadas';
+        const STATE_LEIS_BUSCADAS = 'leisPorTag';
 
         console.log(VizService.getTags());
 

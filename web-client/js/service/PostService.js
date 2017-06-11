@@ -1,5 +1,5 @@
 (() => {
-    app.service('PostService', ['$http', '$q', '$firebaseArray', function ($http, $q, $firebaseArray) {
+    app.service('PostService', ['$http', '$q', '$firebaseArray', '$firebaseObject', function ($http, $q, $firebaseArray, $firebaseObject) {
 
         const self = this;
 
@@ -43,12 +43,7 @@
         };
 
         this.getLei = id => {
-            var copia = angular.copy(self.posts);
-            var retorno = null;
-            copia.forEach(function(el){
-                if (el.$id == id) retorno = el;
-            });
-            return retorno;
+            return $firebaseObject(ref.child(id));
         };
 
         this.atualizarLei = lei => {
