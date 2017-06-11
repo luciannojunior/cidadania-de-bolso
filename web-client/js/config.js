@@ -27,12 +27,12 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
                 }
             })
             .state('leisBuscadas', {
-                url: '/leisBuscadas/:tagId',
+                url: '/leisBuscadas/:tag',
                 templateUrl: 'view/leisBuscadas.html',
                 controller: 'leisController as leisCtrl',
                 resolve: {
-                    tagId: ($stateParams) => {
-                        return $stateParams.tagId;
+                    tag: ($stateParams) => {
+                        return $stateParams.tag;
                     }
                 }
             });

@@ -19,17 +19,29 @@
         <img src="img/xamarin-logo.png" flex-gt-sm="40" flex="90" alt="Cidadania de Bolso">
     </div>
     <!-- Barra de busca-->
-    <div layout="row" layout-padding layout-align="center center" style="background-color: #3d0023">
-        <input flex-gt-sm="40" flex="90" type="text" class="minha-busca" placeholder="Pesquise seus direitos">
-        <md-button id="botao-busca" class="md-raised" style="background-color: #47001d">
-            <i class="fa fa-search" aria-hidden="true"></i>
-
-            <md-tooltip>Buscar</md-tooltip>
-        </md-button>
+    <div style="background-color: #3d0023"
+        data-ng-controller="buscaController as buscaCtrl"
+        layout-align="center end">
+        <form flex layout-align="center center" layout="row" data-ng-submit="buscaCtrl.buscar(tagBusca)">
+                <input flex-gt-sm="40" 
+                    flex="90" 
+                    type="text" 
+                    class="minha-busca" 
+                    placeholder="Pesquise seus direitos"
+                    data-ng-model="tagBusca">
+                
+                <md-button id="botao-busca" 
+                        class="md-raised" 
+                        type="submit"
+                        style="background-color: #47001d">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <md-tooltip>Buscar</md-tooltip>
+                </md-button>
+        </form>
     </div>
     <!-- Parte dinâmica do app-->
     <div flex>
-        <div layout="row" layout-align="center start" ui-view></div>
+        <div layout-padding layout="row" layout-align="center start" ui-view></div>
     </div>
 
     <!--Dependencias-->
@@ -52,6 +64,7 @@
     <script src='js/controller/HomeController.js'></script> 
     <script src="js/controller/leiController.js"></script>
     <script src="js/controller/leisController.js"></script>
+    <script src="js/controller/buscaController.js"></script>
 
     <!--D3plus.js -->
     <script src="http://www.d3plus.org/js/d3.js"></script>
