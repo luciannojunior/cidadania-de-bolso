@@ -58,7 +58,8 @@ app.run(['$rootScope', function ($rootScope) {
         cardLei: { background: 'grey-200' },
         curtir: { background: 'light-green-A700' },
         descurtir: { background: 'red-A700' },
-        botao: { background: 'grey-300' } 
+        botao: { background: 'grey-300' },
+        background: { background: 'grey-500' } 
     };
 }]);
 
@@ -70,13 +71,14 @@ function criarLei(leiId) {
         return leis[leiId];
     }
     const lei = {
-        nome: "Nome genérico " + leiId,
+        nome: "Nome genérico ",
         descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet leo sed lectus varius dictum eget nec elit. Quisque        faucibus viverra dui non molestie. Donec pretium mi lacus, quis varius est tincidunt at. Mauris tincidunt nulla non velit varius posuere.Integer eu auctor turpis. Etiam quis porttitor ex, non volutpat metus. In hac habitasse platea dictumst. Donec malesuada blandit pretium. Cras volutpat ut erat sed ultricies.Sed blandit justo vel arcu lacinia, quis ultricies leo tincidunt.',
         upVotes: 0,
         downVotes: 0,
         tags: [],
         $id: leiId || Math.round(Math.random() * 1000)
     };
+    lei.nome += lei.$id;
     leis[lei.$id] = lei;
     return lei;
 }
