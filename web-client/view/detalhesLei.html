@@ -2,20 +2,20 @@
 <md-content flex-gt-sm="40" 
         flex="80" 
         data-md-colors="::colors.cardLei"
-        class="card-visualizacao"
-        layout-padding>
+        class="card-visualizacao">
     <br>
-    <div data-ng-if="!leiCtrl.isModoEdicao()" layout-padding>
+    <div data-ng-if="!leiCtrl.isModoEdicao()">
         <!--Barra superior-->
-        <div layout="row">
+        <div layout="row" layout-padding>
             <span class="md-display-1">{{ leiCtrl.lei.nome }}</span>
             <span flex></span>
             <md-chips data-ng-model="leiCtrl.lei.tags" data-readonly="true" placeholder="Adicione uma tag" md-max-chips="5">
             </md-chips>
         </div>
+        <br>
 
         <!--Conteudo-->
-        <div flex>
+        <div flex layout-padding class="texto-descricao">
             {{ leiCtrl.lei.descricao }}
         </div>
 
@@ -49,34 +49,46 @@
             </md-button>
         </div>
     </div>
-    <div data-ng-if="leiCtrl.isModoEdicao()" layout-padding>
+    <div data-ng-if="leiCtrl.isModoEdicao()">
         <!--Barra superior-->
-        <div layout="row">
-            <md-input-container flex>
-                <label>Nome da Lei</label>
-                <input type="text" data-ng-model="leiCtrl.lei.nome" required>
+        <form data-ng-submit="leiCtrl.salvarEdicoes()" name="formEdicaoLei">
+            <div layout="column">
+                <div>
+                    <md-input-container flex class="entrada-nome-lei">
+                        <label>Nome da Lei</label>
+                        <input type="text" 
+                            data-ng-model="leiCtrl.lei.nome" 
+                            required>
+                    </md-input-container>
+                </div>
+                <div>
+                    <span>Tags</span>
+                    <md-chips data-ng-model="leiCtrl.lei.tags" 
+                            data-readonly="false" 
+                            placeholder="Adicione uma tag" 
+                            data-md-max-chips="6">
+                    </md-chips>
+                </div>
+            </div>
+
+            <!--Conteudo-->
+            <md-input-container class="md-block">
+                <label>Descrição da Lei</label>
+                <textarea data-ng-model="leiCtrl.lei.descricao" rows="5" data-md-select-on-focus>
+                </textarea>
             </md-input-container>
-            <span flex></span>
-            <md-chips data-ng-model="leiCtrl.lei.tags" data-readonly="false" placeholder="Adicione uma tag" data-md-max-chips="5">
-            </md-chips>
-        </div>
 
-        <!--Conteudo-->
-        <md-input-container class="md-block">
-            <label>Descrição da Lei</label>
-            <textarea data-ng-model="leiCtrl.lei.descricao" data-md-maxlength="150" rows="5" data-md-select-on-focus>
-            </textarea>
-        </md-input-container>
+            <br>
+            <div layout="row" layout-align="center center">
+                <md-button flex class="md-raised" 
+                        type="submit"
+                        data-md-colors="::colors.botao"
+                        data-ng-disabled="!formEdicaoLei.$valid">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
 
-        <br>
-        <div layout="row" layout-align="center center">
-            <md-button flex class="md-raised" 
-                    data-ng-click="leiCtrl.salvarEdicoes()"
-                    data-md-colors="::colors.botao">
-                <i class="fa fa-floppy-o" aria-hidden="true"></i>
-
-                <md-tooltip>Salvar Edições</md-tooltip>
-            </md-button>
-        </div>
+                    <md-tooltip>Salvar Edições</md-tooltip>
+                </md-button>
+            </div>
+        </form>
     </div>
 </md-content>

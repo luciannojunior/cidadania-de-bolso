@@ -1,5 +1,5 @@
 (() => {
-    app.service('BuscaService', ['$http', function ($http) {
+    app.service('PostService', ['$http', function ($http) {
 
         const self = this;
 
