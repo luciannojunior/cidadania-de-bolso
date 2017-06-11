@@ -1,7 +1,9 @@
 (() => {
     'use-strict';
-    app.controller("HomeController", ['$scope', '$state', function ($scope, $state) {
+    app.controller("HomeController", ['$scope', '$state','VizService', function ($scope, $state, VizService) {
         const STATE_LEIS_BUSCADAS = 'leisBuscadas';
+
+        console.log(VizService.getTags());
 
         const sample_data = [
             { "$id": "1", "value": 100, "tag": "Internet", "url": "https://github.com/luciannojunior/cidadania-de-bolso" },
@@ -26,6 +28,7 @@
             .type("tree_map")   // visualization type
             .id("tag")         // key for which our data is unique on
             .size("value")      // sizing of blocks
-            .draw();            // finally, draw the visualization!
+            .draw();
+            
     }]);
 })();
