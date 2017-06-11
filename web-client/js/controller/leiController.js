@@ -27,10 +27,7 @@
         };
 
         (() => {
-            PostService.getLei(leiId)
-                .then(data => {
-                    self.lei = data.data;
-                });
+            self.lei = PostService.getLei(leiId);
         })();
     }]);
 })();

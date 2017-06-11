@@ -9,7 +9,7 @@
         var ref = firebase.database().ref().child('postsBase');
 
         this.posts = $firebaseArray(ref);
-        console.log('EAE');
+
         this.posts.$loaded().then(function(){
             angular.forEach(self.posts, function(item){
                 var el = self.posts.$getRecord(item.$id);
@@ -24,14 +24,31 @@
 
         let leisMock = {};
 
-        this.buscarPorTag = tag => {
-            return $q.when({ data: Object.values(leisMock) });
-            // return $http.get(BUSCA_ENDPOINT);
+        this.buscarPorTag = tagUnica => {
+            var copia = angular.copy(self.posts);
+            return copia.filter(function (post){
+                var temTag = false;
+                post.tags.forEach(function(tag){
+                    if (tag.toUpperCase() == tagUnica.toUpperCase()) temTag = true;
+                });
+                return temTag;
+            });
+        };
+
+        this.buscarPorTitulo = function (titulo){
+            var copia = angular.copy(self.posts);
+            return copia.filter(function (post){
+                return post.titulo.toUpperCase().includes(titulo.toUpperCase());
+            });
         };
 
         this.getLei = id => {
-            return $q.when({ data: leisMock[id] });
-            // return $http.get(GET_LEI_ENDPOINT);
+            var copia = angular.copy(self.posts);
+            var retorno = null;
+            copia.forEach(function(el){
+                if (el.$id == id) retorno = el;
+            });
+            return retorno;
         };
 
         this.atualizarLei = lei => {
