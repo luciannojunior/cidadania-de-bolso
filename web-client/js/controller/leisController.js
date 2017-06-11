@@ -1,14 +1,14 @@
 (() => {
     'use-strict';
-    app.controller('leisController', ['tag', '$state', function (tag, $state) {
-        
+    app.controller('leisController', ['tag', '$state', 'PostService', function (tag, $state, PostService) {
+
         const STATE_LEI = "lei";
-        
+
         const self = this;
 
         this.tag = tag;
 
-        this.leis = criarLeis();
+        this.leis = [];
 
         this.getLeis = () => {
             return self.leis;
@@ -19,7 +19,10 @@
         };
 
         (() => {
-            // buscar as leis;
+            PostService.buscarPorTag(self.tag)
+                .then(data => {
+                    self.leis = data.data;
+                });
         })();
     }]);
 })();

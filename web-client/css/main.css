@@ -57,3 +57,15 @@ Use of this source code is governed by an MIT-style license that can be in found
   font-size: 26px;
   height: 8%;
 }
+
+html,
+body {
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+    background: lightgray;
+}
+
+md-content.md-default-theme, md-content {
+  background-color: transparent;
+}
