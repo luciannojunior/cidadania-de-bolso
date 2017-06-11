@@ -4,8 +4,8 @@
         const self = this;
 
         const STATE_LEI = 'lei';
-        this.tituloState = 'pela tag: ' + tag;
+        this.tituloState = 'pela tag: ' + busca;
         
-        this.leis = PostService.buscarPorTag(tag);
+        this.leis = PostService.buscarPorTitulo(busca);
     }]);
 })();

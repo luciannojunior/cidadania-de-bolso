@@ -7,8 +7,10 @@
 /* Global Styles */
 
 body {
+    margin-left: 120px;
+    margin-right: 120px;
     margin-top: 100px;
-    background-color: #222;
+    background-color: #fff;
 }
 
 @media(min-width:768px) {
@@ -34,7 +36,7 @@ body {
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 225px;
+        padding: auto;
     }
 
     #page-wrapper {
@@ -224,4 +226,8 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+
+.no-padding-left {
+    margin-right: -1.3%;
 }
