@@ -65,7 +65,7 @@ app.run(['$rootScope', function ($rootScope) {
         });
     
     $rootScope.colors = {
-        cardLei: { background: 'grey-200' },
+        cardLei: { background: 'grey-300' },
         curtir: { background: 'light-green-A700' },
         descurtir: { background: 'red-A700' },
         botao: { background: 'grey-300' },
