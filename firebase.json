@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "web-client",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
