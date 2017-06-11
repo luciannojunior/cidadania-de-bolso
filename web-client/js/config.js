@@ -17,7 +17,7 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
         //     requireBase: false
         // });
 
-        // $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/home');
 
         $stateProvider
             .state('home', {
