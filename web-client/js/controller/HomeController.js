@@ -1,9 +1,7 @@
 (() => {
     'use-strict';
-    app.controller("HomeController", ['$state', 'VizService', function ($state, VizService) {
+    app.controller("HomeController", ['$state', 'VizService', 'PostService', function ($state, VizService, PostService) {
         const STATE_LEIS_BUSCADAS = 'leisPorTag';
-
-        console.log(VizService.getTags());
 
         // const sample_data = [
         //     { "$id": "1", "value": 100, "tag": "Internet", "url": "https://github.com/luciannojunior/cidadania-de-bolso" },

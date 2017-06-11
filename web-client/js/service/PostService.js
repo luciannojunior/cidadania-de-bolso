@@ -11,6 +11,7 @@
         this.posts = $firebaseArray(ref);
 
         this.posts.$loaded().then(function(){
+            console.log('As leis foram carregadas')
             angular.forEach(self.posts, function(item){
                 var el = self.posts.$getRecord(item.$id);
 
@@ -26,9 +27,10 @@
 
         this.buscarPorTag = tagUnica => {
             var copia = angular.copy(self.posts);
-            return copia.filter(function (post){
+            var final = copia.filter(function (post){
                 var temTag = false;
                 post.tags.forEach(function(tag){
+                    console.log(tag);
                     if (tag.toUpperCase() == tagUnica.toUpperCase()) temTag = true;
                 });
                 return temTag;

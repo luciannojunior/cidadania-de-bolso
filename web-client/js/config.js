@@ -47,7 +47,7 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
                 }
             })
             .state('leisPorBusca', {
-                url: '/leisPorBusca/:tag',
+                url: '/leisPorBusca/:busca',
                 templateUrl: 'view/leisBuscadas.html',
                 controller: 'LeisPorBuscaController as vm',
                 resolve: {
