@@ -7,13 +7,18 @@
         const GET_LEI_ENDPOINT = "";
 
         var ref = firebase.database().ref().child('postsBase');
+
         this.posts = $firebaseArray(ref);
-        
+        console.log('EAE');
         this.posts.$loaded().then(function(){
-            angular.forEach(function(el){
+            angular.forEach(self.posts, function(item){
+                var el = self.posts.$getRecord(item.$id);
+
                 el.tags = (el.tags.split) ? el.tags.split(',') : el.tags;
                 el.upVotes =  el.upVotes || 0;
                 el.downVotes =  el.downVotes || 0;
+
+                self.posts.$save(el);
             });
         });
 
