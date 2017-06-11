@@ -20,5 +20,9 @@
         this.ativarEdicao = () => {
             isModoEdicao = true;
         };
+
+        this.salvarEdicoes = () => {
+            isModoEdicao = false;
+        };
     }]);
 })();

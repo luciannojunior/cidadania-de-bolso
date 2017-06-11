@@ -24,7 +24,36 @@ md-card>:not(md-card-content) img, md-card>img {
   color: red;
 }
 
+card-visualizacao {
+  margin-top: 10px;
+}
+
 /*
 Copyright 2016 Google Inc. All Rights Reserved. 
 Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at https://material.angularjs.org/license.
 */
+
+.md-chips mh-chip {
+  height: 4%;
+  line-height: 150%;
+  margin: 0px 2px;
+  max-width: 90%;
+}
+
+.md-md-chips.md-default-theme .md-chips, md-chips .md-chips {
+  box-shadow: none;
+}
+
+.md-chips md-chip .md-chip-remove md-icon {
+  margin: 49% 20% 36% 0%;
+  position: relative;
+}
+
+.texto-descricao {
+  text-align: justify;
+}
+
+.md-input-has-value.entrada-nome-lei > input {
+  font-size: 26px;
+  height: 8%;
+}

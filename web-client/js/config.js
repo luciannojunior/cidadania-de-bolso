@@ -1,4 +1,14 @@
-const app = angular.module('cidadaniaApp', ['ngMaterial', 'ui.router']);
+const app = angular.module('cidadaniaApp', ['ngMaterial', 'ui.router', 'firebase']);
+
+var config = {
+    apiKey: "AIzaSyBPJ_KHIW3ltYAT5wy966JXB8U6VpsFCKM",
+    authDomain: "cidadania-de-bolso.firebaseapp.com",
+    databaseURL: "https://cidadania-de-bolso.firebaseio.com",
+    projectId: "cidadania-de-bolso",
+    storageBucket: "cidadania-de-bolso.appspot.com",
+    messagingSenderId: "1079420002785"
+  };
+  firebase.initializeApp(config);
 
 app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
     function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -27,12 +37,12 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
                 }
             })
             .state('leisBuscadas', {
-                url: '/leisBuscadas/:tagId',
+                url: '/leisBuscadas/:tag',
                 templateUrl: 'view/leisBuscadas.html',
                 controller: 'leisController as leisCtrl',
                 resolve: {
-                    tagId: ($stateParams) => {
-                        return $stateParams.tagId;
+                    tag: ($stateParams) => {
+                        return $stateParams.tag;
                     }
                 }
             });
@@ -43,6 +53,13 @@ app.run(['$rootScope', function ($rootScope) {
         function (event, toState, toParams, fromState, fromParams, error) {
             console.log(event, error);
         });
+    
+    $rootScope.colors = {
+        cardLei: { background: 'grey-200' },
+        curtir: { background: 'light-green-A700' },
+        descurtir: { background: 'red-A700' },
+        botao: { background: 'grey-300' } 
+    };
 }]);
 
 /// MOCK

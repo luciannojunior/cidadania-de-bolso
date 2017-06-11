@@ -16,7 +16,7 @@
         ];
 
         const buscarPorTag = single_data => {
-            $state.go(STATE_LEIS_BUSCADAS, { tagId: single_data.$id });
+            $state.go(STATE_LEIS_BUSCADAS, { tag: single_data.tag });
         };
 
         const vizualiation = d3plus.viz()
