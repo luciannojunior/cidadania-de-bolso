@@ -7,34 +7,36 @@
         const GET_LEI_ENDPOINT = "";
 
         var ref = firebase.database().ref().child('postsBase');
+        
+        this.posts = DADOS
 
-        this.posts = $firebaseArray(ref);
+        // this.posts.$loaded().then(function(){
+        //     console.log('As leis foram carregadas')
+        //     angular.forEach(self.posts, function(item){
+        //         var el = self.posts.$getRecord(item.$id);
 
-        this.posts.$loaded().then(function(){
-            console.log('As leis foram carregadas')
-            angular.forEach(self.posts, function(item){
-                var el = self.posts.$getRecord(item.$id);
+        //         el.tags = (el.tags.split) ? el.tags.split(',') : el.tags;
+        //         el.upVotes =  el.upVotes || 0;
+        //         el.downVotes =  el.downVotes || 0;
 
-                el.tags = (el.tags.split) ? el.tags.split(',') : el.tags;
-                el.upVotes =  el.upVotes || 0;
-                el.downVotes =  el.downVotes || 0;
-
-                self.posts.$save(el);
-            });
-        });
+        //         self.posts.$save(el);
+        //     });
+        // });
 
         let leisMock = {};
 
         this.buscarPorTag = tagUnica => {
+            console.log(DADOS);
             var copia = angular.copy(self.posts);
             var final = copia.filter(function (post){
                 var temTag = false;
                 post.tags.forEach(function(tag){
                     console.log(tag);
-                    if (tag.toUpperCase() == tagUnica.toUpperCase()) temTag = true;
+                    if (tag.toUpperCase().trim() == tagUnica.toUpperCase().trim()) temTag = true;
                 });
                 return temTag;
             });
+            return final;
         };
 
         this.buscarPorTitulo = function (titulo){
@@ -45,7 +47,7 @@
         };
 
         this.getLei = id => {
-            return $firebaseObject(ref.child(id));
+            return bruto[id];
         };
 
         this.atualizarLei = lei => {
