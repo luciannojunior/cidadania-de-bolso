@@ -15,13 +15,21 @@
 
 <body ng-app="cidadaniaApp" layout="column">
     <!-- Logo e seção inicial -->
-    <div layout="row" layout-align="center center" style="background-color: #600038">
-        <img src="img/xamarin-logo.png" flex-gt-sm="40" flex="90" alt="Cidadania de Bolso">
+    <div layout="column" layout-align="center center" class="topo-pagina">
+        <!--<img src="img/xamarin-logo.png" flex-gt-sm="40" flex="90" alt="Cidadania de Bolso">-->
+        <br>
+        <br>
+        <div flex>
+            <span class="nome-app">Cidadania de Bolso</span>
+        </div>
+        <br>
+        <br>
     </div>
     <!-- Barra de busca-->
-    <div style="background-color: #3d0023"
+    <div class="barra-busca"
         data-ng-controller="buscaController as buscaCtrl"
         layout-align="center end">
+        <br>
         <form flex layout-align="center center" layout="row" data-ng-submit="buscaCtrl.buscar(tagBusca)">
                 <input flex-gt-sm="40" 
                     flex="70" 
@@ -32,8 +40,7 @@
                 
                 <md-button id="botao-busca" 
                         class="md-raised" 
-                        type="submit"
-                        style="background-color: #47001d">
+                        type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i>
                     <md-tooltip>Buscar</md-tooltip>
                 </md-button>
@@ -45,17 +52,27 @@
     </div>
 
     <!--Dependencias-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <!-- Angular Material Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>-->
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="node_modules/angular-material/angular-material.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/firebase/firebase.js"></script>
+    <script src="node_modules/angularfire/dist/angularfire.min.js"></script>
+
     <!--D3plus.js -->
     <script src="https://cdn.bootcss.com/d3plus/1.9.8/d3plus.full.min.js"></script>
+<!---->
 
     <!--Config-->
     <script src="js/config.js"></script>
@@ -70,5 +87,8 @@
     <script src="js/controller/leiController.js"></script>
     <script src="js/controller/leisController.js"></script>
     <script src="js/controller/buscaController.js"></script>
+    <script src="js/controller/LeisPorBuscaController.js"></script>
+    <script src="js/controller/LeisPorTagController.js"></script>
     
 </body>
+</html>

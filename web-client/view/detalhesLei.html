@@ -7,7 +7,7 @@
         <div data-ng-if="!leiCtrl.isModoEdicao()">
             <!--Barra superior-->
             <div layout="row" layout-padding>
-                <span class="md-display-1">{{ leiCtrl.lei.nome }}</span>
+                <span class="md-display-1">{{ leiCtrl.lei.titulo }}</span>
                 <span flex></span>
                 <md-chips data-ng-model="leiCtrl.lei.tags" data-readonly="true" placeholder="Adicione uma tag" md-max-chips="5">
                 </md-chips>
@@ -16,7 +16,7 @@
 
             <!--Conteudo-->
             <div flex layout-padding class="texto-descricao">
-                {{ leiCtrl.lei.descricao }}
+                {{ leiCtrl.lei.texto }}
             </div>
 
             <br>
@@ -51,13 +51,13 @@
         </div>
         <div data-ng-if="leiCtrl.isModoEdicao()">
             <!--Barra superior-->
-            <form data-ng-submit="leiCtrl.salvarEdicoes()" name="formEdicaoLei">
+            <form layout-padding data-ng-submit="leiCtrl.salvarEdicoes()" name="formEdicaoLei">
                 <div layout="column">
                     <div>
                         <md-input-container flex class="entrada-nome-lei">
-                            <label>Nome da Lei</label>
+                            <label>Titulo do Post</label>
                             <input type="text" 
-                                data-ng-model="leiCtrl.lei.nome" 
+                                data-ng-model="leiCtrl.lei.titulo" 
                                 required>
                         </md-input-container>
                     </div>
@@ -68,13 +68,17 @@
                                 placeholder="Adicione uma tag" 
                                 data-md-max-chips="6">
                         </md-chips>
+
+                        <!--<md-select>
+                            
+                        </md-select>-->
                     </div>
                 </div>
 
                 <!--Conteudo-->
                 <md-input-container class="md-block">
-                    <label>Descrição da Lei</label>
-                    <textarea data-ng-model="leiCtrl.lei.descricao" rows="5" data-md-select-on-focus>
+                    <label>Descrição</label>
+                    <textarea data-ng-model="leiCtrl.lei.texto" rows="5" data-md-select-on-focus>
                     </textarea>
                 </md-input-container>
 

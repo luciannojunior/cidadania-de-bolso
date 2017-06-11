@@ -1,11 +1,11 @@
 (() => {
     'use-strict';
-    app.controller('leiController', ['leiId', function (leiId) {
+    app.controller('leiController', ['leiId', 'PostService', function (leiId, PostService) {
         const self = this;
 
         let isModoEdicao = false;
 
-        this.lei = criarLei(leiId);
+        this.lei = {};
 
         this.isModoEdicao = () => isModoEdicao;
 
@@ -23,6 +23,11 @@
 
         this.salvarEdicoes = () => {
             isModoEdicao = false;
+            return PostService.atualizarLei(self.lei);
         };
+
+        (() => {
+            self.lei = PostService.getLei(leiId);
+        })();
     }]);
 })();

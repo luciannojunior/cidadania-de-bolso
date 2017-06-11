@@ -15,7 +15,7 @@
                 "url": "/lei/qualquercoisa",
                     "text": "O comerciante tem o direito de recusar a..." },
             { "question": "A loja pode exigir um valor mínimo para compras no cartão?", 
-                "tag": "consumidor,venda casada, comerciante", 
+                "tag": "consumidor,venda casada, comerciante, comerciante", 
                 "url": "/lei/qualquercoisa",
                     "text": "Sim. Diante do frequente desrespeito aos..." }, 
         ];
@@ -26,7 +26,9 @@
                    return  acc.concat(val.tag.split(','))
                 },[])
 
-                return tag;
+                
+
+                return tag.map(item => item = item.trim());
 
         }
 
@@ -60,9 +62,19 @@
 
         function getTags(){
 
-            let tags = generateJsonElements(countUniqueElements(createTag(doubts)));;
-            console.log(tags)
-            return tags;
+
+            let tags = generateJsonElements(countUniqueElements(createTag(doubts)));
+           
+            tags.sort((a,b) => {
+                if(a.quantity < b.quantity){
+                    return 1;
+                }else if (a.quantity > b.quantity) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            })
+            return tags.slice(0,8);
 
         }
 

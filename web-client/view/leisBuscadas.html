@@ -1,18 +1,18 @@
 <div layout="column" flex-gt-sm="40" flex="90">
-    <div data-ng-repeat="lei in leisCtrl.getLeis()" data-ng-click="leisCtrl.abrirDetalhes(lei)">
+    <div data-ng-repeat="leiUnica in vm.leis" data-ui-sref="lei({leiId: leiUnica.$id })">
         <md-card flex data-md-colors="::colors.cardLei">
             <md-card-content>
-                <h2>{{ lei.nome }}</h2>
-                <p class="texto-descricao">{{ lei.descricao | limitTo: 140 }}{{lei.descricao.length > 140 ? '...' : ''}}</p>
+                <h2>{{ leiUnica.titulo }}</h2>
+                <p class="texto-descricao">{{ leiUnica.texto | limitTo: 140 }}{{ leiUnicaleiUnica.texto.length > 140 ? '...' : ''}}</p>
             </md-card-content>
             <md-card-footer layout="row" layout-align="end center">
                 <span flex="5" id="upvotes">
-                    {{ lei.upVotes }}
+                    {{ leiUnica.upVotes }}
 
                     <md-tooltip>Likes</md-tooltip>
                 </span>
                 <span flex="5" id="downvotes">
-                    {{ lei.downVotes }}
+                    {{ leiUnica.downVotes }}
                     
                     <md-tooltip>Dislikes</md-tooltip>
                 </span>
