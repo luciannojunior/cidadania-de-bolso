@@ -34,7 +34,7 @@ Portanto, Cidadania de Bolso não é apenas um compilado de informações sobre 
 
 ***
 
-## Tecnologias Utilizados
+## Tecnologias Utilizadas
 
 * Angular Material Desing
 * Firebase
@@ -50,3 +50,6 @@ Portanto, Cidadania de Bolso não é apenas um compilado de informações sobre 
 * [Maria Clara Dantas](https://github.com/clarammdantas)
 
 
+## Como executar o projeto 
+
+> npm start 
