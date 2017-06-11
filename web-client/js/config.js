@@ -36,13 +36,23 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
                     }
                 }
             })
-            .state('leisBuscadas', {
-                url: '/leisBuscadas/:tag',
+            .state('leisPorTag', {
+                url: '/leisPorTag/:tag',
                 templateUrl: 'view/leisBuscadas.html',
-                controller: 'leisController as leisCtrl',
+                controller: 'LeisPorTagController as vm',
                 resolve: {
                     tag: ($stateParams) => {
                         return $stateParams.tag;
+                    }
+                }
+            })
+            .state('leisPorBusca', {
+                url: '/leisPorBusca/:tag',
+                templateUrl: 'view/leisBuscadas.html',
+                controller: 'LeisPorBuscaController as vm',
+                resolve: {
+                    busca: ($stateParams) => {
+                        return $stateParams.busca;
                     }
                 }
             });
