@@ -15,6 +15,7 @@
         };
 
         this.abrirDetalhes = lei => {
+            console.log("indo", lei);
             $state.go(STATE_LEI, { leiId: lei.$id });
         };
 

@@ -23,10 +23,11 @@
 
         this.salvarEdicoes = () => {
             isModoEdicao = false;
+            return PostService.atualizarLei(self.lei);
         };
 
         (() => {
-            PostService.getLei(self.leiId)
+            PostService.getLei(leiId)
                 .then(data => {
                     self.lei = data.data;
                 });

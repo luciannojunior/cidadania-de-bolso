@@ -9,8 +9,8 @@
         let leisMock = {};
 
         this.buscarPorTag = tag => {
-            return $q.when({ data: leisMock });
-            return $http.get(BUSCA_ENDPOINT);
+            return $q.when({ data: Object.values(leisMock) });
+            // return $http.get(BUSCA_ENDPOINT);
         };
 
         this.getLei = id => {
@@ -19,7 +19,7 @@
         };
 
         this.atualizarLei = lei => {
-            leisMock[lei.$id] = id;
+            leisMock[lei.$id] = lei;
             return $q.when({ data: lei });
             // atualizar firebase
         };

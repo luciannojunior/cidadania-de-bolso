@@ -51,7 +51,7 @@
         </div>
         <div data-ng-if="leiCtrl.isModoEdicao()">
             <!--Barra superior-->
-            <form data-ng-submit="leiCtrl.salvarEdicoes()" name="formEdicaoLei">
+            <form layout-padding data-ng-submit="leiCtrl.salvarEdicoes()" name="formEdicaoLei">
                 <div layout="column">
                     <div>
                         <md-input-container flex class="entrada-nome-lei">
@@ -68,6 +68,10 @@
                                 placeholder="Adicione uma tag" 
                                 data-md-max-chips="6">
                         </md-chips>
+
+                        <md-select>
+                            
+                        </md-select>
                     </div>
                 </div>
 
