@@ -31,6 +31,11 @@
                 "move": false,
                 "click": buscarPorTag
             })
+            .font({
+                "family" : "HelveticaNeue",
+                "transform" :  "uppercase"
+
+            })
             .draw();
 
     }]);
