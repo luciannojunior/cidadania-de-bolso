@@ -3,11 +3,11 @@
         flex="80" 
         class="card-visualizacao">
     <br>
-    <div data-md-colors="::colors.cardLei">
+    <div data-md-colors="::colors.cardLei" layout-padding>
         <div data-ng-if="!leiCtrl.isModoEdicao()">
             <!--Barra superior-->
             <div layout="row" layout-padding>
-                <span class="md-display-1">{{ leiCtrl.lei.titulo }}</span>
+                <span class="md-display-1 texto-titulo">{{ leiCtrl.lei.titulo }}</span>
                 <span flex></span>
                 <md-chips data-ng-model="leiCtrl.lei.tags" data-readonly="true" placeholder="Adicione uma tag" md-max-chips="5">
                 </md-chips>
@@ -15,7 +15,7 @@
             <br>
 
             <!--Conteudo-->
-            <div flex layout-padding class="texto-descricao">
+            <div flex layout-padding class="texto-descricao texto-conteudo">
                 {{ leiCtrl.lei.texto }}
             </div>
 
