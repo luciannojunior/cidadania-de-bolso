@@ -8,7 +8,7 @@
 
         this.tag = tag;
 
-        this.leis = [];
+        this.leis = PostService.posts;
 
         this.getLeis = () => {
             return self.leis;

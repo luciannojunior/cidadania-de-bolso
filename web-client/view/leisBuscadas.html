@@ -2,8 +2,8 @@
     <div data-ng-repeat="lei in leisCtrl.getLeis()" data-ng-click="leisCtrl.abrirDetalhes(lei)">
         <md-card flex data-md-colors="::colors.cardLei">
             <md-card-content>
-                <h2>{{ lei.nome }}</h2>
-                <p class="texto-descricao">{{ lei.descricao | limitTo: 140 }}{{lei.descricao.length > 140 ? '...' : ''}}</p>
+                <h2>{{ lei.titulo }}</h2>
+                <p class="texto-descricao">{{ lei.texto | limitTo: 140 }}{{lei.texto.length > 140 ? '...' : ''}}</p>
             </md-card-content>
             <md-card-footer layout="row" layout-align="end center">
                 <span flex="5" id="upvotes">

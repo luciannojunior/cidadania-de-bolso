@@ -1,10 +1,21 @@
 (() => {
-    app.service('PostService', ['$http', '$q', function ($http, $q) {
+    app.service('PostService', ['$http', '$q', '$firebaseArray', function ($http, $q, $firebaseArray) {
 
         const self = this;
 
         const BUSCA_ENDPOINT = "";
         const GET_LEI_ENDPOINT = "";
+
+        var ref = firebase.database().ref().child('postsBase');
+        this.posts = $firebaseArray(ref);
+        
+        this.posts.$loaded().then(function(){
+            angular.forEach(function(el){
+                el.tags = (el.tags.split) ? el.tags.split(',') : el.tags;
+                el.upVotes =  el.upVotes || 0;
+                el.downVotes =  el.downVotes || 0;
+            });
+        });
 
         let leisMock = {};
 
@@ -32,7 +43,7 @@
         }
 
         (() => {
-            criarMock();
+            // criarMock();
         })();
     }]);
 })();
