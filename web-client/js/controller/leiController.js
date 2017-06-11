@@ -1,6 +1,5 @@
-(() => {
     'use-strict';
-    app.controller('leiController', ['leiId', 'PostService', '$mdDialog', function (leiId, PostService, $mdDialog) {
+    app.controller('leiController', ['leiId', 'PostService', '$mdDialog', 'AuthService',  function (leiId, PostService, $mdDialog, AuthService) {
         const self = this;
 
         let isModoEdicao = false;
@@ -14,6 +13,7 @@
         };
 
         this.downVote = () => {
+            AuthService.logar();
             self.lei.downVotes++;
         };
 
@@ -39,4 +39,3 @@
             self.lei = PostService.getLei(leiId);
         })();
     }]);
-})();
