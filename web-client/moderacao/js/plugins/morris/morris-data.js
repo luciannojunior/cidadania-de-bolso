@@ -66,15 +66,45 @@ $(function() {
 
     // Donut Chart
     Morris.Donut({
-        element: 'morris-donut-chart',
+        element: 'morris-donut-chart1',
         data: [{
-            label: "Download Sales",
+            label: "Recebidas",
             value: 12
         }, {
-            label: "In-Store Sales",
+            label: "Aceitas",
             value: 30
         }, {
-            label: "Mail-Order Sales",
+            label: "Rejeitadas",
+            value: 20
+        }],
+        resize: true
+    });
+
+    Morris.Donut({
+        element: 'morris-donut-chart2',
+        data: [{
+            label: "Recebidas",
+            value: 12
+        }, {
+            label: "Aceitas",
+            value: 30
+        }, {
+            label: "Rejeitadas",
+            value: 20
+        }],
+        resize: true
+    });
+
+    Morris.Donut({
+        element: 'morris-donut-chart3',
+        data: [{
+            label: "Revisão",
+            value: 12
+        }, {
+            label: "Aceitas",
+            value: 30
+        }, {
+            label: "Rejeitadas",
             value: 20
         }],
         resize: true
