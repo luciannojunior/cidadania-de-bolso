@@ -3,40 +3,18 @@
 [debug] CLI Version:  3.2.1
 [debug] Platform:     darwin
 [debug] Node Version: v7.7.4
-[debug] Time:         Sun Jun 11 2017 17:30:28 GMT-0300 (BRT)
+[debug] Time:         Sun Jun 11 2017 17:51:59 GMT-0300 (BRT)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cidadania-de-bolso 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cidadao-de-bolso 
 [debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cidadania-de-bolso/tokens 
-[debug] <<< HTTP RESPONSE 200
-[info] 
-[info] === Deploying to 'cidadania-de-bolso'...
-[info] 
-[info] i  deploying hosting
-[info] ✔  database: rules ready to deploy.
-[info] i  hosting: preparing web-client directory for upload...
-[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/cidadania-de-bolso/uploads/-KmNqSS1KSOBtzXNoU-y?fileCount=2824&message= 
-[debug] <<< HTTP RESPONSE 200
-[info] ✔  hosting: web-client folder uploaded successfully
-[debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/Cellar/node/7.7.4/bin/node /usr/local/bin/firebase deploy
-[debug] CLI Version:  3.2.1
-[debug] Platform:     darwin
-[debug] Node Version: v7.7.4
-[debug] Time:         Sun Jun 11 2017 17:32:45 GMT-0300 (BRT)
-[debug] ----------------------------------------------------------------------
-[debug] 
-[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cidadania-de-bolso 
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cidadania-de-bolso/tokens 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cidadao-de-bolso/tokens 
 [debug] <<< HTTP RESPONSE 200
 [info] 
-[info] === Deploying to 'cidadania-de-bolso'...
+[info] === Deploying to 'cidadao-de-bolso'...
 [info] 
 [info] i  deploying hosting
 [info] ✔  database: rules ready to deploy.
-[info] i  hosting: preparing web-client directory for upload...
-[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/cidadania-de-bolso/uploads/-KmNqz7dAZER4K967YyN?fileCount=2824&message= 
+[info] i  hosting: preparing public directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/cidadao-de-bolso/uploads/-KmNvOLGMbu0BRRJvaTz?fileCount=2826&message= 

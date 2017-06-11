@@ -1,0 +1,99 @@
+<!-- Visualização de lei -->
+<md-content flex-gt-sm="40" 
+        flex="80" 
+        class="card-visualizacao">
+    <br>
+    <div data-md-colors="::colors.cardLei">
+        <div data-ng-if="!leiCtrl.isModoEdicao()">
+            <!--Barra superior-->
+            <div layout="row" layout-padding>
+                <span class="md-display-1">{{ leiCtrl.lei.titulo }}</span>
+                <span flex></span>
+                <md-chips data-ng-model="leiCtrl.lei.tags" data-readonly="true" placeholder="Adicione uma tag" md-max-chips="5">
+                </md-chips>
+            </div>
+            <br>
+
+            <!--Conteudo-->
+            <div flex layout-padding class="texto-descricao">
+                {{ leiCtrl.lei.texto }}
+            </div>
+
+            <br>
+            <div layout="row" layout-align="end center">
+
+                <span class="md-subhead" id="upvotes">{{ leiCtrl.lei.upVotes }}</span>
+                <md-button class="md-raised md-fab md-mini" 
+                        data-ng-click="leiCtrl.upVote()"
+                        data-md-colors="::colors.curtir">
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+
+                    <md-tooltip>Like</md-tooltip>
+                </md-button>
+
+                <span class="md-subhead" id="downvotes">{{ leiCtrl.lei.downVotes }}</span>
+                <md-button class="md-raised md-fab md-mini" 
+                        data-ng-click="leiCtrl.downVote()"
+                        data-md-colors="::colors.descurtir">
+                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+
+                    <md-tooltip>Dislikes</md-tooltip>
+                </md-button>
+
+                <md-button class="md-raised md-fab md-mini" 
+                        data-ng-click="leiCtrl.ativarEdicao()"
+                        data-md-colors="::colors.botao">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                    <md-tooltip>Ativar Edição</md-tooltip>
+                </md-button>
+            </div>
+        </div>
+        <div data-ng-if="leiCtrl.isModoEdicao()">
+            <!--Barra superior-->
+            <form layout-padding data-ng-submit="leiCtrl.salvarEdicoes()" name="formEdicaoLei">
+                <div layout="column">
+                    <div>
+                        <md-input-container flex class="entrada-nome-lei">
+                            <label>Titulo do Post</label>
+                            <input type="text" 
+                                data-ng-model="leiCtrl.lei.titulo" 
+                                required>
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <span>Tags</span>
+                        <md-chips data-ng-model="leiCtrl.lei.tags" 
+                                data-readonly="false" 
+                                placeholder="Adicione uma tag" 
+                                data-md-max-chips="6">
+                        </md-chips>
+
+                        <!--<md-select>
+                            
+                        </md-select>-->
+                    </div>
+                </div>
+
+                <!--Conteudo-->
+                <md-input-container class="md-block">
+                    <label>Descrição</label>
+                    <textarea data-ng-model="leiCtrl.lei.texto" rows="5" data-md-select-on-focus>
+                    </textarea>
+                </md-input-container>
+
+                <br>
+                <div layout="row" layout-align="center center" ng-click="leiCtrl.salvarEdicoes()">
+                    <md-button flex class="md-raised" 
+                            type="submit"
+                            data-md-colors="::colors.botao"
+                            data-ng-disabled="!formEdicaoLei.$valid">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+
+                        <md-tooltip>Salvar Edições</md-tooltip>
+                    </md-button>
+                </div>
+            </form>
+        </div>
+    </div>
+</md-content>
