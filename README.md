@@ -1,4 +1,4 @@
-# NO LLHEGA HERMANO, LEIA-ME MUCHO
+# NO LLEGA HERMANO, LÉAME MUCHO
 
 ## Cidadania de Bolso
 
