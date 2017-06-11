@@ -9,8 +9,9 @@ md-card>:not(md-card-content) img, md-card>img {
   border-radius: 8px;
   padding: 5px;
   font-family: Roboto;
+  font-weight: 100;
   width: 100%;
-  background-color: #ef4c10;
+  color: #ef4c10;
 }
 
 #botao-busca {
