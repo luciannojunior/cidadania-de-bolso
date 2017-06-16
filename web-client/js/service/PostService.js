@@ -7,7 +7,7 @@
         const GET_LEI_ENDPOINT = "";
 
         var ref = firebase.database().ref().child('postsBase');
-        
+
         this.posts = DADOS
 
         // this.posts.$loaded().then(function(){
@@ -26,12 +26,10 @@
         let leisMock = {};
 
         this.buscarPorTag = tagUnica => {
-            console.log(DADOS);
             var copia = angular.copy(self.posts);
-            var final = copia.filter(function (post){
+            var final = copia.filter(function (post) {
                 var temTag = false;
-                post.tags.forEach(function(tag){
-                    console.log(tag);
+                post.tags.forEach(function (tag) {
                     if (tag.toUpperCase().trim() == tagUnica.toUpperCase().trim()) temTag = true;
                 });
                 return temTag;
@@ -39,9 +37,9 @@
             return final;
         };
 
-        this.buscarPorTitulo = function (titulo){
+        this.buscarPorTitulo = function (titulo) {
             var copia = angular.copy(self.posts);
-            return copia.filter(function (post){
+            return copia.filter(function (post) {
                 return post.titulo.toUpperCase().includes(titulo.toUpperCase());
             });
         };
@@ -58,9 +56,14 @@
 
         const criarMock = () => {
             const leis = criarLeis();
+            console.log(leis);
             leis.forEach((item) => {
                 leisMock[item.$id] = item;
             });
+        }
+
+        this.getAllPosts = () => {
+            return angular.copy(DADOS);
         }
 
         (() => {
